@@ -26,30 +26,32 @@
         var $body = $('body');
         $body.html('');
 
-        $('<nav class="navbar navbar-inverse navbar-fixed-top"><div class="container">Twittler</div></nav>').appendTo($body);
+        $('<nav class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-header">Twittler</div></nav>').appendTo($body);
 
         var index = streams.home.length - 1;
         while(index >= 0){
           var tweet = streams.home[index];
           var user = tweet.user;
-          var $tweet = $('<div class=".col-md-6 .col-md-offset-3" id=' + user + '></div>');
+          var $tweet = $('<div class="tweets" id=' + user + '></div>');
           $tweet.text('@' + tweet.user + ': ' + tweet.message + ' created ' + tweet.created_at.getMinutes() + ' minutes ago' );
           $tweet.appendTo($body);
           index -= 1;
         }
-        $('<a href="index.html"><button class="btn btn-info" id="newTweet">New Tweets</button></a>').appendTo($body);
+        $('<a href="index.html"><button class="btn btn-info" id="newTweet">New Tweets</button></a>').appendTo($body).on('click', function() {
+          $('button').hide();
+        });
 
         $('#shawndrost').on('click', function() {
           $('div').hide();
           var indexShawnDrost = streams.users.shawndrost.length - 1;
           while (indexShawnDrost >= 0) {
             var tweetShawnDrost = streams.users.shawndrost[indexShawnDrost];
-            var $tweetShawnDrost = $('<div></div>');
+            var $tweetShawnDrost = $('<div class="tweets"></div>');
             $tweetShawnDrost.text('@' + tweetShawnDrost.user + ': ' + tweetShawnDrost.message + ' created ' + tweetShawnDrost.created_at.getMinutes() + ' minutes ago' );
             $tweetShawnDrost.appendTo($body);
             indexShawnDrost -= 1;
           }
-          $('<button><a href="index.html">All Tweets</a></button>').appendTo($body).on('click', function() {
+          $('<a href="index.html"><button class="btn btn-info" id="allTweets">All Tweets</button></a>').appendTo($body).on('click', function() {
             $('div').hide();
             $('button').hide();
           });
@@ -60,12 +62,12 @@
           var indexMracus = streams.users.mracus.length - 1;
           while (indexMracus >= 0) {
             var tweetMracus = streams.users.mracus[indexMracus];
-            var $tweetMracus = $('<div></div>');
+            var $tweetMracus = $('<div class="tweets"></div>');
             $tweetMracus.text('@' + tweetMracus.user + ': ' + tweetMracus.message + ' created ' + tweetMracus.created_at.getMinutes() + ' minutes ago' );
             $tweetMracus.appendTo($body);
             indexMracus -= 1;
           }
-          $('<button><a href="index.html">All Tweets</a></button>').appendTo($body).on('click', function() {
+          $('<a href="index.html"><button class="btn btn-info" id="allTweets">All Tweets</button></a>').appendTo($body).on('click', function() {
             $('div').hide();
             $('button').hide();
           });
@@ -76,12 +78,12 @@
           var indexSharksForCheap = streams.users.sharksforcheap.length - 1;
           while (indexSharksForCheap >= 0) {
             var tweetSharksForCheap = streams.users.sharksforcheap[indexSharksForCheap];
-            var $tweetSharksForCheap = $('<div></div>');
+            var $tweetSharksForCheap = $('<div class="tweets"></div>');
             $tweetSharksForCheap.text('@' + tweetSharksForCheap.user + ': ' + tweetSharksForCheap.message + ' created ' + tweetSharksForCheap.created_at.getMinutes() + ' minutes ago' );
             $tweetSharksForCheap.appendTo($body);
             indexSharksForCheap -= 1;
           }
-          $('<button><a href="index.html">All Tweets</a></button>').appendTo($body).on('click', function() {
+          $('<a href="index.html"><button class="btn btn-info" id="allTweets">All Tweets</button></a>').appendTo($body).on('click', function() {
             $('div').hide();
             $('button').hide();
           });
@@ -92,12 +94,12 @@
           var indexDouglasCalhoun = streams.users.douglascalhoun.length - 1;
           while (indexDouglasCalhoun >= 0) {
             var tweetDouglasCalhoun = streams.users.douglascalhoun[indexDouglasCalhoun];
-            var $tweetDouglasCalhoun = $('<div></div>');
+            var $tweetDouglasCalhoun = $('<div class="tweets"></div>');
             $tweetDouglasCalhoun.text('@' + tweetDouglasCalhoun.user + ': ' + tweetDouglasCalhoun.message + ' created ' + tweetDouglasCalhoun.created_at.getMinutes() + ' minutes ago' );
             $tweetDouglasCalhoun.appendTo($body);
             indexDouglasCalhoun -= 1;
           }
-          $('<button><a href="index.html">All Tweets</a></button>').appendTo($body).on('click', function() {
+          $('<a href="index.html"><button class="btn btn-info" id="allTweets">All Tweets</button></a>').appendTo($body).on('click', function() {
             $('div').hide();
             $('button').hide();
           });
